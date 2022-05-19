@@ -9,6 +9,7 @@ Builder.load_file('whatever.kv')
 
 
 
+
 class MyGridLayout(Widget):
 
     name = ObjectProperty(None)
@@ -34,10 +35,10 @@ class MyGridLayout(Widget):
 
 
 
-class MyApp(App):
+class TestApp(App):
     def build(self):
         return MyGridLayout()
 
 
 if __name__ == '__main__':
-    MyApp().run()
+    TestApp().run()
