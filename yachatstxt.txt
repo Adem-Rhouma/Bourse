@@ -1,0 +1,51 @@
+{
+  "Potentiel": 528.42,
+  "Code": "1rPCOX",
+  "Cours": 1.83,
+  "old cours": 0.1,
+}{
+  "Potentiel": 255.74,
+  "Code": "1rPIPH",
+  "Cours": 2.89,
+  "old cours": 0.5,
+}{
+  "Potentiel": 178.34,
+  "Code": "1rPDBV",
+  "Cours": 2.92,
+  "old cours": 10,
+}{
+  "Potentiel": 116.12,
+  "Code": "1rPCLA",
+  "Cours": 3.42,
+  "old cours": 0,
+}{
+  "Potentiel": 145.87,
+  "Code": "1rPGNFT",
+  "Cours": 3.36,
+  "old cours": 0,
+}{
+  "Potentiel": 58.78,
+  "Code": "1rPEO",
+  "Cours": 23.78,
+  "old cours": 0,
+}{
+  "Potentiel": 135.52,
+  "Code": "1rPORP",
+  "Cours": 24.90,
+  "old cours": 0,
+}{
+  "Potentiel": 63.79,
+  "Code": "1rPCRI",
+  "Cours": 18.56,
+  "old cours": 0,
+}{
+  "Potentiel": 82.95,
+  "Cours": 2.41,
+  "Code": "1rPTNG",
+  "old cours": 0,
+}{
+  "Potentiel": 68.43,
+  "Code": "1rPTRI",
+  "Cours": 120.10,
+  "old cours": 0,
+}
