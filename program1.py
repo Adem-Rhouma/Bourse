@@ -14,7 +14,7 @@ def sorter(e):
   return e['Potentiel']
 
 def sorter2(r):
-  return r['Ac'] / r['Na']
+  return r['Ac'] / r['Na'] 
 
 def rapp(r):
   return r['Ac'] / r['Na']
@@ -51,8 +51,9 @@ for eachURL in allURLS:
     if '/cours/' in eachX and 7<len(eachX) <22:
       U = re.findall(r'/cours/(.*?)/', eachX)
       for eachT in U:
-        realT.append(eachT)
-        URL = 'https://www.boursorama.com/cours/consensus/%s' % (eachT,)
+        if eachT not in realT:
+          realT.append(eachT)
+          URL = 'https://www.boursorama.com/cours/consensus/%s' % (eachT,)
 
 
 headers = {}
@@ -67,6 +68,7 @@ for ur1 in range(len(realT)):
 
   res = urllib.request.urlopen(f'https://www.boursorama.com/cours/{realT[ur1]}/')
   name = re.findall(fr'<a class="c-faceplate__company-link" href="/cours/{realT[ur1]}/" title="Cours (.*?)"', str(res.read()))
+  print(realT[ur1])
   print(name[0].lower())
 
   if name[0].lower() in read:
@@ -100,17 +102,18 @@ for ur1 in range(len(realT)):
             name = re.findall(r'<a class="c-faceplate__company-link" href="/cours/1rPAB/" title="Cours (.*?)">AB SCIENCE</a>', str(res.read()))
             if float(Ac) > float(Na)/2:
               if (float(cours1[0]) > 10.00) and (int(Ac)>4):
-                print('testy testy')
+                if url not in d or url not in info:
+                  print('testy testy')
 
-                val1=int(Ac) / int(Na)
-                info.append({"Ac":int(Ac),"Na":int(Na), "Potentiel":float(Pot[0]), "cours": float(cours1[0]), "Code":"%s" % (realT[ur1],)})
+                  val1=int(Ac) / int(Na)
+                  info.append({"Ac":int(Ac),"Na":int(Na), "Potentiel":float(Pot[0]), "cours": float(cours1[0]), "URL": url})
+                
+                  d.append({"val1":val1,"Ac":int(Ac),"Na":int(Na), "Potentiel":float(Pot[0]), "cours": float(cours1[0]), "URL": url})
               
-                d.append({"val1":float(val1),"Ac":int(Ac),"Na":int(Na), "Potentiel":float(Pot[0]), "cours": float(cours1[0]), "Code":"%s" % (realT[ur1],)})
-            
-                #info.sort(key=sorter, reverse=True)
-                #pprint.pprint(sorted(info, key=operator.itemgetter('Ac', 'Na')))
-        
-                #d.sort(key=sorter2, reverse=True)        
+                  #info.sort(key=sorter, reverse=True)
+                  #pprint.pprint(sorted(info, key=operator.itemgetter('Ac', 'Na')))
+          
+                  #d.sort(key=sorter2, reverse=True)        
             
             print(Ac,'/',Na,'Potentiel',Pot[0], 'cours:', cours1[0],   realT[ur1])
         else:
@@ -138,22 +141,3 @@ print(a_list)
 with open('C:\DOCs\Bourse\PYTHON\Experts123.txt', 'w') as f:
   for i in range(len(a_list)):
     f.write(json.dumps(a_list[i], indent=2))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
